@@ -1,4 +1,8 @@
 # node-blog-backend
+<h2>Setup</h2>
+- Run "npm i" to install dependencies. <br>
+- Hash new username and passwords for the dashboard in auth/login.js <br>
+- Set up IMGUR API and put Client ID in secure/dashboard/blogbuilder.html and secure/dashboard/blogeditor.html <br><br>
 <strong>Public Routes:</strong>
 - api/blogs (GET) : Returns all blog metadata in blogdata.json.
 
