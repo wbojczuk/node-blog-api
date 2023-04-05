@@ -6,6 +6,14 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const sessionStorage = require("sessionstorage-for-nodejs");
 
+
+/*
+
+  HASH USERNAME AND PASSWORD HERE
+  bcrypt.hash("DATA", 10).then((data)=>{console.log(data)})
+
+*/
+
 passport.serializeUser(function(user, cb) {
   process.nextTick(function() {
     cb(null, { id: user.id, username: user.username });
@@ -73,12 +81,7 @@ passport.deserializeUser(function(user, cb) {
     
     if((loginAttempts < 5 || (new Date()).getTime() > lastLoginAttempt + 1000)){
 
-/*
-
-  HASH USERNAME AND PASSWORD HERE
-  bcrypt.hash("DATA", 10).then((data)=>{console.log(data)})
-
-*/
+      /* ***********************PLACE HASHED PASS/USERNAME BELOW*************************** */
 
     const isPasswordCorrect = await bcrypt.compare(password, "***** HASHED PASSWORD HERE *****");
     if(isPasswordCorrect){
