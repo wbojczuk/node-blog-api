@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <style>
+        .main-menu,.main-menu li>a{-webkit-transform:translateZ(0) scale(1,1)}.main-menu li>a,.settings{font-family:Strait,sans-serif}.no-touch .scrollable.hover,.scrollbar{overflow-y:hidden}body,nav li,nav ul{margin:0;padding:0}body{font-family:"Open Sans",arial;background:url('https://static.tumblr.com/94eb957a00fd03c0c2f7d26decd71578/u1rhacw/osAmyyh1q/tumblr_static_tumblr_static_gaussian_blur_gradient_desktop_1680x943_wallpaper-393751.jpg'); background-size:cover;color:#fff;font-weight:300}.settings{height:73px;float:left;background-repeat:no-repeat;width:250px;margin:0;text-align:center;font-size:20px}.scrollbar,.scrollbar:hover{height:90%;width:100%;overflow-x:hidden}.scrollbar:hover{overflow-y:scroll}.fa,.main-menu .nav-icon{height:36px;text-align:center;position:relative;display:table-cell}#style-1::-webkit-scrollbar-track{border-radius:2px}#style-1::-webkit-scrollbar{width:5px;background-color:#f7f7f7}#style-1::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);background-color:#bfbfbf}.fa-lg{font-size:1em}.fa{width:55px;top:12px;font-size:20px}.main-menu:hover,nav.main-menu.expanded{width:250px;overflow:hidden;opacity:1}.main-menu{background:#f7f7f7;position:fixed;top:0;bottom:0;height:100%;left:0;width:55px;overflow:hidden;-webkit-transition:width .2s linear;transition:width .2s linear;box-shadow:1px 0 15px rgba(0,0,0,.07);opacity:1;z-index:999}.darkerli,.darkerlishadow,.darkerlishadowdown{background-color:#ededed;text-transform:capitalize}.main-menu>ul{margin:7px 0}.main-menu li{position:relative;display:block;width:250px}.main-menu li>a{position:relative;width:255px;display:table;border-collapse:collapse;border-spacing:0;color:#8a8a8a;font-size:13px;text-decoration:none;-webkit-transition:.14s linear;transition:.14s linear;border-top:1px solid #f2f2f2;text-shadow:1px 1px 1px #fff}.main-menu .nav-icon{width:55px;vertical-align:middle;font-size:18px}.main-menu .nav-text{position:relative;display:table-cell;vertical-align:middle;width:190px;font-family:'Titillium Web',sans-serif}.main-menu .fb-like{left:180px;position:absolute;top:15px}.main-menu>ul.logout{position:absolute;left:0;bottom:0}.no-touch .scrollable.hover:hover{overflow-y:auto;overflow:visible}.settings:hover,settings:focus{-webkit-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;-moz-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;-o-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;transition:.2s ease-in-out,width 0,height 0,top 0,left 0}.settings:active,settings:focus{-webkit-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;-moz-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;-o-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;transition:.1s ease-in-out,width 0,height 0,top 0,left 0}a:focus,a:hover{text-decoration:none;border-left:0 solid #f7f7f7}nav{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}nav li,nav ul{outline:0;text-transform:uppercase}.darkerlishadow{-webkit-box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55);-moz-box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55);box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55)}.darkerlishadowdown{-webkit-box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55);-moz-box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55);box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55)}.dashboard-page nav.dashboard-menu ul li.active a,.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover,.main-menu li:hover>a,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,nav.main-menu li.active>a{color:#fff;background-color:#0bb;text-shadow:0 0 0}.area{float:left;background:#e2e2e2;width:100%;height:100%}@font-face{font-family:'Titillium Web';font-style:normal;font-weight:300;src:local('Titillium WebLight'),local('TitilliumWeb-Light'),url(https://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff')}
+    </style>
+        <style>
+            body{
+                background-size: cover;
+            }
+            .center{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+#currentBlogsContainer{
+    width: calc(100% - 55px);
+    min-height: 100vh;
+    padding-left: 55px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-card{
+    display: inline-block;
+    width: 25vw;
+    height: 25vw;
+    background-color: #ffffffaf;
+    border-radius: 5px;
+    margin: 2%;
+    color: black;
+    position: relative;
+}
+.blog-card .title{
+    padding-top: 5%;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2vw;
+    
+}
+.blog-card .description{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    max-height: 50%;
+    font-size: 1vw;
+}
+.blog-card .edit svg{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    bottom: 5%; left: 10%;
+}
+.blog-card .delete svg{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    bottom: 5%; right: 10%;
+}
+
+.tag-wrapper{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blog-tag{
+    display: inline-block;
+    padding: 1%;
+    margin: 1%;
+    font-size: 1.5vw;
+    border: 1px solid rgba(142, 142, 142, 0.686);
+    border-radius: 4px;
+}
+/* Mobile Styles */
+@media only screen and (max-width: 650px) {
+    .blog-card{
+    display: inline-block;
+    width: 80vw;
+    height: 80vw;
+}
+.blog-card .title{
+    font-size: 3vh;
+    
+}
+.blog-card .description{
+    font-size: 1.5vh;
+}
+
+.blog-tag{
+    display: inline-block;
+    padding: 1%;
+    margin: 1%;
+    font-size: 2vh;
+    border: 1px solid rgba(142, 142, 142, 0.686);
+    border-radius: 4px;
+}
+}
+/* CUSTOM STYLES */
+
+    </style>
+</head>
+<body>
+    <nav class="main-menu">
+        <div>
+           <a class="logo" href="http://startific.com">
+           </a> 
+         </div> 
+       <div class="settings"></div>
+       <div class="scrollbar" id="style-1">
+             
+       <ul>
+         
+       <li>                                   
+       <a href="/dashboard">
+       <i class="fa fa-home fa-lg"></i>
+       <span class="nav-text">Home</span>
+       </a>
+       </li>   
+          
+       <li>                                 
+       <a href="/dashboard/blog_builder">
+       <i class="fa fa-plus fa-lg"></i>
+       <span class="nav-text">New Blog</span>
+       </a>
+       </li>   
+       
+       </ul>
+</nav>
+
+<div id="currentBlogsContainer">
+    
+
+</div>
+
+<script>
+    const currentBlogsContainer = document.getElementById("currentBlogsContainer");
+
+    getCurrentBlogs();
+    async function getCurrentBlogs(){
+        const fetchDraftData = await fetch("/api/drafts");
+        const draftData = await fetchDraftData.json();
+        const fetchBlogData = await fetch("/api/blogs");
+        let blogData = await fetchBlogData.json();
+        blogData = blogData.reverse();
+        blogData = [...blogData, ...draftData];
+        const blogDataLength = blogData.length;
+        for(let i = blogDataLength - 1; i >=0; --i){
+            const blog = blogData[i];
+            const title = blog.title;
+            const description = blog.description;
+            const id = blog.id;
+            const isDraft = (blog.isdraft) ? '<div class="center"><div class="blog-tag">DRAFT</div></div>' : "";
+
+            let tagElems = "";
+            blog.tags.forEach((tag)=>{
+                tagElems += `<div class="blog-tag">${tag}</div>`;
+            })
+            
+
+            currentBlogsContainer.insertAdjacentHTML("beforeend", `
+            <div class="blog-card" data-blog_id="${id}">
+                <div class="title">${title}</div>
+                ${isDraft}
+                <div class="description">${description}</div>
+                <div class="tag-wrapper">${tagElems}</div>
+
+                <a class="delete" href="#">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 10L7.70141 19.3578C7.87432 20.3088 8.70258 21 9.66915 21H14.3308C15.2974 21 16.1257 20.3087 16.2986 19.3578L18 10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a class="edit" href="#">
+                    <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 490.305 490.305" xml:space="preserve">
+                        <g>
+                        <path d="M472.469,81.443l-63.6-63.6c-13.1-16.4-53.2-30.2-83.4,0l-290.9,289.9l0,0c-4.4,4.4-6.5,10.1-6.2,15.6l-27.1,141.8
+                    c-4.2,16.2,11.9,26.6,22.9,25l147-29.2c4.2,0,7.3-2.1,10.4-5.2l290.9-289.8C495.469,142.943,495.469,104.443,472.469,81.443z
+                        M354.669,46.043c6.3-7.3,18.8-7.3,26.1,0l17.3,17l-289.7,289.7l-30.1-30.4L354.669,46.043z M61.769,364.043l64.4,64.4l-80.1,15.8
+                    L61.769,364.043z M444.369,135.643l-276.8,276.8l-30.1-30.4l290-290l16.8,16.5C453.469,118.343,449.169,130.743,444.369,135.643z"
+                    />
+                    </g>
+                    </svg>
+                </a>
+            </div>
+            `)
+        };
+
+        // Add event listeners
+        currentBlogsContainer.querySelectorAll(".delete").forEach((elem)=>{
+            elem.addEventListener("click", deleteBlog)
+        })
+
+        currentBlogsContainer.querySelectorAll(".edit").forEach((elem)=>{
+            elem.addEventListener("click", editBlog)
+        })
+    }
+
+    function editBlog(evt){
+        window.location.href = `/dashboard/blog_editor?blogid=${evt.currentTarget.parentElement.dataset.blog_id}`;
+    }
+
+    function deleteBlog(evt){
+        if(confirm("Are you Sure you want to completely delete this blog post?")){
+            fetch(`/api/blogs/${evt.currentTarget.parentElement.dataset.blog_id}`, {method: "DELETE"})
+            .then(()=>{window.location.reload()})
+            .catch((err)=>{console.log(err)})
+        }
+    }
+    
+</script>
+
+</body>
+</html>

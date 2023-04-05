@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Builder</title>
+    <script src="https://cdn.jsdelivr.net/gh/wbojczuk/JSDevTools/jsdev.min.js"></script>
+    <script src="/tinyEditor/js/tinymce/tinymce.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <style>
+        .main-menu,.main-menu li>a{-webkit-transform:translateZ(0) scale(1,1)}.main-menu li>a,.settings{font-family:Strait,sans-serif}.no-touch .scrollable.hover,.scrollbar{overflow-y:hidden}body,nav li,nav ul{margin:0;padding:0}body{font-family:"Open Sans",arial;background:url('https://static.tumblr.com/94eb957a00fd03c0c2f7d26decd71578/u1rhacw/osAmyyh1q/tumblr_static_tumblr_static_gaussian_blur_gradient_desktop_1680x943_wallpaper-393751.jpg'); background-size:cover;color:#fff;font-weight:300}.settings{height:73px;float:left;background-repeat:no-repeat;width:250px;margin:0;text-align:center;font-size:20px}.scrollbar,.scrollbar:hover{height:90%;width:100%;overflow-x:hidden}.scrollbar:hover{overflow-y:scroll}.fa,.main-menu .nav-icon{height:36px;text-align:center;position:relative;display:table-cell}#style-1::-webkit-scrollbar-track{border-radius:2px}#style-1::-webkit-scrollbar{width:5px;background-color:#f7f7f7}#style-1::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);background-color:#bfbfbf}.fa-lg{font-size:1em}.fa{width:55px;top:12px;font-size:20px}.main-menu:hover,nav.main-menu.expanded{width:250px;overflow:hidden;opacity:1}.main-menu{background:#f7f7f7;position:fixed;top:0;bottom:0;height:100%;left:0;width:55px;overflow:hidden;-webkit-transition:width .2s linear;transition:width .2s linear;box-shadow:1px 0 15px rgba(0,0,0,.07);opacity:1;z-index:999}.darkerli,.darkerlishadow,.darkerlishadowdown{background-color:#ededed;text-transform:capitalize}.main-menu>ul{margin:7px 0}.main-menu li{position:relative;display:block;width:250px}.main-menu li>a{position:relative;width:255px;display:table;border-collapse:collapse;border-spacing:0;color:#8a8a8a;font-size:13px;text-decoration:none;-webkit-transition:.14s linear;transition:.14s linear;border-top:1px solid #f2f2f2;text-shadow:1px 1px 1px #fff}.main-menu .nav-icon{width:55px;vertical-align:middle;font-size:18px}.main-menu .nav-text{position:relative;display:table-cell;vertical-align:middle;width:190px;font-family:'Titillium Web',sans-serif}.main-menu .fb-like{left:180px;position:absolute;top:15px}.main-menu>ul.logout{position:absolute;left:0;bottom:0}.no-touch .scrollable.hover:hover{overflow-y:auto;overflow:visible}.settings:hover,settings:focus{-webkit-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;-moz-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;-o-transition:.2s ease-in-out,width 0,height 0,top 0,left 0;transition:.2s ease-in-out,width 0,height 0,top 0,left 0}.settings:active,settings:focus{-webkit-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;-moz-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;-o-transition:.1s ease-in-out,width 0,height 0,top 0,left 0;transition:.1s ease-in-out,width 0,height 0,top 0,left 0}a:focus,a:hover{text-decoration:none;border-left:0 solid #f7f7f7}nav{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}nav li,nav ul{outline:0;text-transform:uppercase}.darkerlishadow{-webkit-box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55);-moz-box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55);box-shadow:inset 0 5px 5px -4px rgba(50,50,50,.55)}.darkerlishadowdown{-webkit-box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55);-moz-box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55);box-shadow:inset 0 -4px 5px -4px rgba(50,50,50,.55)}.dashboard-page nav.dashboard-menu ul li.active a,.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover,.main-menu li:hover>a,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,nav.main-menu li.active>a{color:#fff;background-color:#0bb;text-shadow:0 0 0}.area{float:left;background:#e2e2e2;width:100%;height:100%}@font-face{font-family:'Titillium Web';font-style:normal;font-weight:300;src:local('Titillium WebLight'),local('TitilliumWeb-Light'),url(https://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff')}
+    </style>
+    <style>
+        body{
+            padding-left: 60px;
+            padding-bottom: 10vh;
+            padding-top: 5vh;
+            background-size: cover;
+        }
+        input[type="text"], textarea{
+            background-color: #ffffffcd;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 0.5vw 1vw;
+            margin: 0.5vw 1vw;
+        }
+        input[type="checkbox"]{
+            background-color: #ffffffcd;
+            border: 1px solid #ccc;
+            color: #ffffffcd;
+        }
+        #blogTitle{
+            width: 15vw;
+            
+        }
+        #blogDescription{
+            border-radius: 5px;
+            width: 50vw;
+            resize: none;
+        }
+        #blogImgPreview{
+            max-width: 20vw;
+            max-height:12vw;
+        }
+        #blogImg{
+            padding: 0.5vw 0;
+            margin: 0;
+        }
+        #blogImgContainer{
+            position: absolute;
+            top:5%;
+            left:65%;
+        }
+        #tagsContainer{
+            display: inline-block;
+            padding-bottom: 2vw;
+        }
+        #tagsContainer label{
+            margin-right: 2vw;
+        }
+        #blogEditor{
+            display: inline-block;
+            height: 90vh;
+        }
+        #blogEditorContainer{
+            display: inline-block;
+            width: 80vw;
+            margin-left: 10%;
+        }
+
+        #submitButton{
+            background-color: #91f1d6;
+            width: 25vw;
+            padding: 0.5vw 0;
+            border: 0px solid #757575;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 1.5vw;
+            margin: 2vw 5vw;
+        }
+        #saveDraftButton{
+            background-color: #f19c91;
+            width: 25vw;
+            padding: 0.5vw 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: sans-serif;
+            border: 0px solid #757575;
+            font-size: 1.5vw;
+            margin: 2vw 5vw;
+        }
+    #addTagButton{
+        background-color: #91f1d6;
+        border: 1px solid #757575;
+        border-radius: 5px;
+        padding: 0.25vw 1vw;
+        margin-right: 2vw;
+        cursor: pointer;
+        visibility: hidden;
+    }
+    /* Mobile Styles */
+@media only screen and (max-width: 650px) {
+    input[type="text"], textarea{
+            border-radius: 5px;
+            padding:1vh 1vh;
+            margin: 0.5vh 1vh;
+        }
+        #blogTitle{
+            width: 60vw; 
+        }
+        #blogDescription{
+            border-radius: 5px;
+            width: 75vw;
+        }
+        #blogImgPreview{
+            position: absolute;
+            max-width: 40vw;
+            max-height:20vw;
+            top: 2vh;
+            right:5vw;
+        }
+        #blogImgContainer{
+            position: relative;
+            left:2%;
+            padding: 2vh 0;
+            height:20vw;
+        }
+        #tagsContainer{
+            padding-bottom: 2vh;
+        }
+        #tagsContainer label{
+            margin-right: 2vw;
+        }
+        #blogEditorContainer{
+            display: inline-block;
+            width: 100%;
+            margin-left: 0;
+        }
+
+        #submitButton{
+            background-color: #91f1d6;
+            width: 40vw;
+            padding: 1vh 0;
+            font-size: 2vh;
+            margin: 1vh 1vh;
+        }
+        #saveDraftButton{
+            background-color: #f19c91;
+            width: 40vw;
+            padding: 1vh 0;
+            font-size: 2vh;
+            margin: 1vh 1vh;
+        }
+    #addTagButton{
+        padding: 0.25vh 1vh;
+        margin-right: 2vh;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="main-menu">
+        <div>
+           <a class="logo" href="http://startific.com">
+           </a> 
+         </div> 
+       <div class="settings"></div>
+       <div class="scrollbar" id="style-1">
+             
+       <ul>
+         
+       <li>                                   
+       <a href="/dashboard">
+       <i class="fa fa-home fa-lg"></i>
+       <span class="nav-text">Home</span>
+       </a>
+       </li>   
+          
+       <li>                                 
+       <a href="/dashboard/blog_builder">
+       <i class="fa fa-plus fa-lg"></i>
+       <span class="nav-text">New Blog</span>
+       </a>
+       </li>   
+       
+       </ul>
+</nav>
+    <label for="blogTitle" style="height: 100%;">Title</label>
+    <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog Title"><br><br>
+    <label for="blogDescription">Description</label><br>
+   <textarea placeholder="Blog Description" name="blogDescription" id="blogDescription" cols="30" rows="10"></textarea><br>
+<div id="blogImgContainer">
+    <label for="blogImg">Thumbnail</label><br><input type="file" name="blogImg" id="blogImg" accept="image/*"><br>
+    <img id="blogImgPreview" src="https://i.imgur.com/l07w2wq.png">
+</div>
+    <label for="addtag">Tags</label>
+    <input type="text" placeholder="Add Tag" id="addTag"><button id="addTagButton">Add Tag</button>
+    <div id="tagsContainer">
+
+    </div>
+
+<div id="blogEditorContainer">
+    <textarea name="blogEditor" id="blogEditor" cols="30" rows="10"></textarea>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center;">
+    <button data-savebutton="true" id="saveDraftButton">Save As Draft</button>
+    <button id="submitButton">Post Blog</button>
+</div>
+
+    <input type="text" style="display: none;" id="setUnsaved">
+
+    <script>
+        let isImageUploading = false;
+
+        // GET TAGS
+        getTags();
+        async function getTags(){
+            const fetchData = await fetch("/api/blogs/categories");
+            const categories = await fetchData.json();
+
+            let tagHTML = "";
+            categories.forEach((category, counter)=>{
+                tagHTML += `<div><input type="checkbox" name="tag${counter}" id="tag${counter}"><label for="tag${counter}">${category}</label></div>`;
+            })
+            document.getElementById("tagsContainer").innerHTML = tagHTML;
+        }
+
+        tinymce.init({
+            selector: "#blogEditor",
+            toolbar_mode: 'sliding',
+            mobile: {
+            menubar: true,
+            toolbar: true
+            },
+            plugins: 'image lists',
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent| image',
+            image_title: true,
+            /* enable automatic uploads of images represented by blob or data URIs*/
+            automatic_uploads: true,
+            a11y_advanced_options: true,
+            file_picker_types: 'image',
+
+            file_picker_callback: function (cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+
+    /*
+      Note: In modern browsers input[type="file"] is functional without
+      even adding it to the DOM, but that might not be the case in some older
+      or quirky browsers like IE, so you might want to add it to the DOM
+      just in case, and visually hide it. And do not forget do remove it
+      once you do not need it anymore.
+    */
+
+    input.onchange = function () {
+      var file = this.files[0];
+      const formData = new FormData();
+      
+      formData.append("image", file);
+      isImageUploading = true;
+      fetch("https://api.imgur.com/3/image", {
+                method: "POST",
+                headers: {
+                   /* ********  PUT IMGUR CLIENT ID HERE  ********* */
+                   "Authorization": "Client-ID ****CLIENT-ID HERE**** "
+                },
+                body: formData
+            }).then((res)=>res.json()).then((data)=>{
+                isImageUploading = false;
+                cb(`${data.data.link}`, {title: `${data.data.id}`});
+            }).catch((err)=>{
+                console.log(err)
+                isImageUploading = false;
+            })
+        /* call the callback and populate the Title field with the file name */
+        // 
+      };
+
+    input.click();
+  },
+  setup: function(editor){
+    editor.on("init", ()=>{jsdev.unsavedChanges.listen();})
+    editor.on("input", ()=>{const myevt = new Event("input"); document.getElementById("setUnsaved").dispatchEvent(myevt)});
+  }
+        })
+
+
+        function postBlog(evt){
+            jsdev.unsavedChanges.destroy();
+            tinymce.triggerSave();
+
+            // Get Selected Tags
+            const selectedTags = [];
+            document.querySelectorAll("#tagsContainer div input").forEach((checkbox)=>{
+                if(checkbox.checked){
+                    selectedTags.push(document.querySelector(`label[for="${checkbox.id}"]`).textContent.toLowerCase())
+                }
+            })
+            let imgURL = null;
+
+            const bodyVal = {
+                    id: new Date().getTime(),
+                    // UPDATE TO ACCEPT IMG
+                    img: (imgURL != null) ? imgURL : "https://i.imgur.com/l07w2wq.png",
+                    title: document.getElementById("blogTitle").value,
+                    description: document.getElementById("blogDescription").value,
+                    tags: selectedTags,
+                    content: (document.getElementById("blogEditor").value),
+                    isdraft: false
+                };
+
+                if(evt.currentTarget.hasAttribute("data-savebutton")){
+                    bodyVal.isdraft = true;
+                }
+
+            fetch("/api/blogs", {method: "POST", headers:{"Content-Type": "application/json"},
+                body:  JSON.stringify(bodyVal)
+            }).then(()=>{window.location.href = "/dashboard";})
+
+        }
+
+
+        document.getElementById("blogImg").onchange = function(){
+                var file = this.files[0];
+                const formData = new FormData();
+                formData.append("image", file);
+                isImageUploading = true;
+                document.getElementById("blogImgPreview").src = `data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin: auto; background: none; display: block; shape-rendering: auto;' width='204px' height='204px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'%3E%3Ccircle cx='84' cy='50' r='10' fill='%23bbc8b1'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='0.7575757575757576s' calcMode='spline' keyTimes='0;1' values='10;0' keySplines='0 0.5 0.5 1' begin='0s'%3E%3C/animate%3E%3Canimate attributeName='fill' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='discrete' keyTimes='0;0.25;0.5;0.75;1' values='%23bbc8b1;%23bbc8b1;%23bbc8b1;%23bbc8b1;%23bbc8b1' begin='0s'%3E%3C/animate%3E%3C/circle%3E%3Ccircle cx='16' cy='50' r='10' fill='%23bbc8b1'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='0s'%3E%3C/animate%3E%3Canimate attributeName='cx' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='0s'%3E%3C/animate%3E%3C/circle%3E%3Ccircle cx='50' cy='50' r='10' fill='%23bbc8b1'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-0.7575757575757576s'%3E%3C/animate%3E%3Canimate attributeName='cx' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-0.7575757575757576s'%3E%3C/animate%3E%3C/circle%3E%3Ccircle cx='84' cy='50' r='10' fill='%23bbc8b1'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-1.5151515151515151s'%3E%3C/animate%3E%3Canimate attributeName='cx' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-1.5151515151515151s'%3E%3C/animate%3E%3C/circle%3E%3Ccircle cx='16' cy='50' r='10' fill='%23bbc8b1'%3E%3Canimate attributeName='r' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='0;0;10;10;10' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-2.2727272727272725s'%3E%3C/animate%3E%3Canimate attributeName='cx' repeatCount='indefinite' dur='3.0303030303030303s' calcMode='spline' keyTimes='0;0.25;0.5;0.75;1' values='16;16;16;50;84' keySplines='0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1' begin='-2.2727272727272725s'%3E%3C/animate%3E%3C/circle%3E%3C!-- %5Bldio%5D generated by https://loading.io/ --%3E%3C/svg%3E`;
+                fetch("https://api.imgur.com/3/image", {
+                method: "POST",
+                headers: {
+                    /* ********  PUT IMGUR CLIENT ID HERE  ********* */
+                    "Authorization": "Client-ID ****CLIENT-ID HERE**** "
+                },
+                body: formData
+            }).then((res)=>res.json()).then((data)=>{
+                isImageUploading = false;
+                imgURL = data.data.link;
+                document.getElementById("blogImgPreview").src = imgURL;
+            }).catch((err)=>{console.log(err);isImageUploading = false;})
+            }
+
+        document.getElementById("submitButton").addEventListener("click", (evt)=>{
+            if(isImageUploading){
+                alert("Please Wait for images to finish uploading")
+            }else{
+            if(confirm("Are you sure you want to post this blog?")){
+                postBlog(evt)
+            }
+        }
+        })
+        document.getElementById("saveDraftButton").addEventListener("click", postBlog)
+
+        // ADD TAG COMPONENT
+        document.getElementById("addTag").addEventListener("input", (evt)=>{
+            const addTag = evt.currentTarget;
+            const addTagButton = document.getElementById("addTagButton");
+            if(/\w{1,}/gi.test(addTag.value)){
+                addTagButton.style.visibility = "visible";
+            }else{
+                addTagButton.style.visibility = "hidden";
+            }
+        })
+        document.getElementById("addTagButton").addEventListener("click", (evt)=>{
+            const addTagButton = evt.currentTarget;
+            const addTag = document.getElementById("addTag");
+            addTagButton.style.visibility = "hidden";
+            
+            const curID = document.querySelectorAll("#tagsContainer input").length;
+            document.getElementById("tagsContainer").insertAdjacentHTML("beforeend", `
+            <div><input checked type="checkbox" name="tag${curID}" id="tag${curID}"><label for="tag${curID}">${addTag.value.trim().toLowerCase()}</label></div>
+            `);
+            addTag.value = "";
+            
+        })
+       
+    </script>
+</body>
+</html>
