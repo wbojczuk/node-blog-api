@@ -36,8 +36,6 @@ app.use("/dashboard", require("./secure/dashboard.js"))
 app.use("/api", require("./api/api.js"));
 
 // SERVING THE STATIC ADMIN PANEL
-app.use(express.static("public"));
-app.use("/tinyEditor", express.static("public/tinymce"));
 app.use(express.static("secure"));
 
 
