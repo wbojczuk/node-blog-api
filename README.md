@@ -1,4 +1,5 @@
-# node-blog-backend
+# node-blog-backend Filesystem
+Saves blogs on project filesystem in a .JSON system
 <h2>Setup</h2>
 - Run "npm i" to install dependencies. <br>
 - Hash new username and passwords for the dashboard in auth/login.js <br>
