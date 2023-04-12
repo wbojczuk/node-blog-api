@@ -2,7 +2,8 @@
 <h2>Setup</h2>
 - Run "npm i" to install dependencies. <br>
 - Hash new username and passwords for the dashboard in auth/login.js <br>
-- Set up IMGUR API and put Client ID in secure/dashboard/blogbuilder.html and secure/dashboard/blogeditor.html <br><br>
+- Set up IMGUR API and put Client ID in secure/dashboard/blogbuilder.html and secure/dashboard/blogeditor.html <br>
+- Add dev server to CORS in "app.js" <br><br>
 
 - Can Use NCC to compile. <br>
 - Compiled/Bundled with NCC "ncc build app.js -o dist" <br>
