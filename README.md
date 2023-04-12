@@ -5,6 +5,8 @@
 - Set up IMGUR API and put Client ID in secure/dashboard/blogbuilder.html and secure/dashboard/blogeditor.html <br>
 - Add dev server to CORS in "app.js" <br><br>
 
+- Add to the frontend's style.css to get custom fonts in TinyMCE - @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Inspiration&family=Lobster&display=swap');
+
 - Can Use NCC to compile. <br>
 - Compiled/Bundled with NCC "ncc build app.js -o dist" <br>
 - NOTE: Since NCC bundles into a single STATIC file, you need to manually update the require to the "blogdata.json" file after complilation/bundling.<br>
