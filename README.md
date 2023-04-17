@@ -11,7 +11,6 @@ Saves blogs on project filesystem in a .JSON system
 - Can Use NCC to compile. <br>
 - Compiled/Bundled with NCC "ncc build app.js -o dist" <br>
 - NOTE: Since NCC bundles into a single STATIC file, you need to manually update the require to the "blogdata.json" file after complilation/bundling.<br>
-- TinyMCE is served in the "public" folder to the dashboard. You'll need to take it out while compiling then add it back.<br><br>
 
 
 <strong>Public Routes:</strong>
